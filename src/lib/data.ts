@@ -32,14 +32,14 @@ export const navLinks: Link[] = [
 
 export const links: Link[] = [
     {
-        href: 'https://github.com/dmhd6219',
-        title: 'GitHub',
-        icon: Github,
-    },
-    {
         href: 'https://t.me/dmhd6219',
         title: 'Telegram',
         icon: Telegram,
+    },
+    {
+        href: 'https://github.com/dmhd6219',
+        title: 'GitHub',
+        icon: Github,
     },
     {
         href: 'https://last.fm/user/dmhd',
