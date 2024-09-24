@@ -2,10 +2,10 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import PortfolioLayout from '@/router/portfolio/layout.tsx';
-import Portfolio from '@/router/portfolio/root/page.tsx';
-import ApiLayout from '@/router/api/layout.tsx';
-import NowPlayingRedirectPage from '@/router/api/now-playing/redirect/page.tsx';
+import PortfolioLayout from '@/components/router/portfolio/layout.tsx';
+import Portfolio from '@/components/router/portfolio/root/page.tsx';
+import ApiLayout from '@/components/router/api/layout.tsx';
+import NowPlayingRedirectPage from '@/components/router/api/now-playing/redirect/page.tsx';
 
 const router = createBrowserRouter([
     {
