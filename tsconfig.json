@@ -9,11 +9,15 @@
     }
   ],
   "compilerOptions": {
+    /* Aliases */
     "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+
+    /* SVGR */
+    "types": ["vite-plugin-svgr/client"]
   }
 }
