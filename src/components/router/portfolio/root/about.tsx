@@ -7,11 +7,32 @@ import {
     Star,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { city, githubRepo, links } from '@/lib/data.tsx';
+import { city, githubRepo, links, techStack } from '@/lib/data.tsx';
 import { fetchGithubStars } from '@/lib/api/github.tsx';
 import { useEffect, useState } from 'react';
 import { numberStars } from '@/lib/utils.ts';
 import { Badge } from '@/components/ui/badge.tsx';
+
+const colors = [
+    'bg-red-400',
+    'bg-blue-400',
+    'bg-green-400',
+    'bg-yellow-400',
+    'bg-indigo-400',
+    'bg-purple-400',
+    'bg-pink-400',
+    'bg-orange-400',
+    'bg-cyan-400',
+    'bg-rose-400',
+    'bg-fuchsia-400',
+    'bg-violet-400',
+    'bg-emerald-400',
+    'bg-teal-400',
+];
+
+function getRandomColor() {
+    return colors[Math.floor(Math.random() * colors.length)];
+}
 
 export default function About() {
     const [stars, setStars] = useState(0);
@@ -47,9 +68,9 @@ export default function About() {
                     <Link
                         to={`https://github.com/${githubRepo.author}/${githubRepo.repo}`}
                         target="_blank"
-                        className=""
+                        className="flex-1"
                     >
-                        <Card className="rounded-md group">
+                        <Card className="rounded-md group h-full">
                             <CardHeader className="">
                                 <div className="flex justify-between items-center">
                                     <div className="flex gap-x-3 items-center">
@@ -110,9 +131,14 @@ export default function About() {
                             </div>
                         </CardHeader>
                         <CardContent className="flex flex-wrap gap-2">
-                            <Badge className="bg-secondary text-secondary-foreground">
-                                Badge
-                            </Badge>
+                            {techStack.map((item) => (
+                                <Badge className="bg-secondary hover:bg-secondary/80 text-secondary-foreground">
+                                    <div
+                                        className={`${getRandomColor()} w-2 h-2 mr-2 rounded-full`}
+                                    />
+                                    {item}
+                                </Badge>
+                            ))}
                         </CardContent>
                     </Card>
                 </div>
