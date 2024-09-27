@@ -4,13 +4,14 @@ import {
     FileCodeIcon,
     LinkIcon,
     PinIcon,
-    StarIcon,
+    Star,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { city, githubRepo, links } from '@/lib/data.tsx';
 import { fetchGithubStars } from '@/lib/api/github.tsx';
 import { useEffect, useState } from 'react';
 import { numberStars } from '@/lib/utils.ts';
+import { Badge } from '@/components/ui/badge.tsx';
 
 export default function About() {
     const [stars, setStars] = useState(0);
@@ -48,12 +49,15 @@ export default function About() {
                         target="_blank"
                         className=""
                     >
-                        <Card className="rounded-md">
+                        <Card className="rounded-md group">
                             <CardHeader className="">
                                 <div className="flex justify-between items-center">
                                     <div className="flex gap-x-3 items-center">
-                                        <StarIcon size={20} /> Поставь мне
-                                        звезду :3
+                                        <Star
+                                            size={20}
+                                            className="group-hover:text-yellow-400 group-hover:fill-yellow-400 transition-colors"
+                                        />{' '}
+                                        Поставь мне звезду :3
                                     </div>
                                     <ExternalLinkIcon size={20} />
                                 </div>
@@ -105,7 +109,11 @@ export default function About() {
                                 <FileCodeIcon size={20} /> Технические навыки
                             </div>
                         </CardHeader>
-                        <CardContent className="text-muted-foreground flex flex-col gap-y-1.5"></CardContent>
+                        <CardContent className="flex flex-wrap gap-2">
+                            <Badge className="bg-secondary text-secondary-foreground">
+                                Badge
+                            </Badge>
+                        </CardContent>
                     </Card>
                 </div>
             </div>
