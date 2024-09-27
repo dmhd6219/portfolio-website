@@ -5,7 +5,7 @@ import { links } from '@/lib/data.ts';
 export default function Home() {
     return (
         <div
-            className="mt-32 mb-16 max-w-screen-lg text-center font-bold text-4xl md:text-5xl lg:text-6xl"
+            className="mt-32 mb-16 mx-auto max-w-screen-lg text-center font-bold text-4xl md:text-5xl lg:text-6xl"
             id="home"
         >
             <div className="flex justify-center mb-5">
