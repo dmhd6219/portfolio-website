@@ -56,9 +56,14 @@ export default function About() {
                         </CardHeader>
                         <CardContent className="text-muted-foreground flex flex-col gap-y-1.5">
                             {links.map((link) => (
-                                <div className="flex gap-x-3 items-center">
+                                <div
+                                    key={link.title}
+                                    className="flex gap-x-3 items-center"
+                                >
                                     {link.icon}
-                                    <Link to={link.href}>{link.title}</Link>
+                                    <Link to={link.href} target="_blank">
+                                        {link.title}
+                                    </Link>
                                 </div>
                             ))}
                         </CardContent>
@@ -132,7 +137,10 @@ export default function About() {
                         </CardHeader>
                         <CardContent className="flex flex-wrap gap-2">
                             {techStack.map((item) => (
-                                <Badge className="bg-secondary hover:bg-secondary/80 text-secondary-foreground">
+                                <Badge
+                                    key={item}
+                                    className="bg-secondary hover:bg-secondary/80 text-secondary-foreground"
+                                >
                                     <div
                                         className={`${getRandomColor()} w-2 h-2 mr-2 rounded-full`}
                                     />
